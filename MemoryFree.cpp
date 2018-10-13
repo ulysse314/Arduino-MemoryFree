@@ -1,3 +1,4 @@
+#include "MemoryFree.h"
 
 #ifdef __arm__
 // should use uinstd.h to define sbrk but Due causes a conflict
@@ -6,7 +7,7 @@ extern "C" char* sbrk(int incr);
 extern char *__brkval;
 #endif  // __arm__
 
-int freeMemory() {
+size_t freeMemory() {
   char top;
 #ifdef __arm__
   return &top - reinterpret_cast<char*>(sbrk(0));

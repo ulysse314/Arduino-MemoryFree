@@ -5,6 +5,8 @@
 #ifndef	MEMORY_FREE_H
 #define MEMORY_FREE_H
 
-int freeMemory();
+#include <stddef.h>
+
+size_t freeMemory();
 
 #endif
